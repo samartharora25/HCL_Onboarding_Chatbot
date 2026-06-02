@@ -126,3 +126,4 @@ This project is optimized for deployment on **Render**:
 
 * **Samarth Arora** - Lead Developer & Creator - [@samartharora25](https://github.com/samartharora25)
 * * **Pragya Chakravarty** - Lead Developer & Creator - [@pragyac09](https://github.com/pragyac09)
+* **Gauravi Shyam ** - HCL Intern  - [gauravi-alt](https://github.com/gauravi-alt)
