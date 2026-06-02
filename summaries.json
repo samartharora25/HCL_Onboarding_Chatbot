@@ -1,0 +1,87 @@
+{
+  "portal": {
+    "name": "OneConnect Portal",
+    "url": "https://oneconnect.hcltech.com/",
+    "purpose": "Raising IT requests, software installs, reporting access issues, and incident tickets."
+  },
+  "workflow": {
+    "standard_software": [
+      "1. Search for 'Software request' on OneConnect.",
+      "2. Raise a request for the desired software and note the RITM ticket number.",
+      "3. Search for 'Software install request' on OneConnect.",
+      "4. Raise the install request referencing the previous ticket number.",
+      "5. Justification for all requests: 'Need for project'.",
+      "6. IT support team will reach out and install the tool."
+    ],
+    "ticket_prefixes": {
+      "RITM": "Request, Install, and Access tickets (e.g. software setups)",
+      "INC": "Incident and issue resolution tickets (e.g. extension fixes)"
+    }
+  },
+  "tools": [
+    {
+      "id": "t1",
+      "title": "Python",
+      "brief": "1 Python Search for Software request and select the item to continue with below steps 1.Create a software request ticket on the portal for Python and note the ticket number. 2.Search for Software inst..."
+    },
+    {
+      "id": "t2",
+      "title": "Node.js Foundation Node.js",
+      "brief": "2 Node.js Foundation Node.js 1.First create a software request ticket on the portal for Node.js Foundation Node.js and note the ticket number. 2.Search for Software install request ,select the item to..."
+    },
+    {
+      "id": "t3",
+      "title": "Microsoft Visual studio code",
+      "brief": "3 Microsoft Visual studio code 1.First create a software request ticket on the portal for Microsoft Visual studio code and note the ticket number. 2.Search for Software install request ,select the ite..."
+    },
+    {
+      "id": "t4",
+      "title": "Github Copilot",
+      "brief": "4 Github Copilot By default users can access copilot on the HCL machines, In case the extension in vs code does not work raise an incident ticket with issue description and post resolution it should w..."
+    },
+    {
+      "id": "t5",
+      "title": "ChatGPT https://chatgpt.com/",
+      "brief": "5 ChatGPT https://chatgpt.com/ Search for access restricted requestion. Raise an access to restricted website request with Barred url https://chatgpt.com/ and attach error screenshot. Once approved th..."
+    },
+    {
+      "id": "t6",
+      "title": "Gemini AI https://gemini.google.com",
+      "brief": "6 Gemini AI https://gemini.google.com Search for access restricted requestion. Raise an access to restricted website request with Barred url https://gemini.google.com and attach error screenshot. Once..."
+    },
+    {
+      "id": "t7",
+      "title": "Podman",
+      "brief": "7 Podman Search for Software Request. 1.Create a software request ticket on the portal for Podman and WSL (use keyword *wsl while searching) and note the ticket number. 2.Search for Software install r..."
+    }
+  ],
+  "common_issues": [
+    {
+      "id": "i1",
+      "title": "1.Python Package Repository:",
+      "solution_summary": "Check chatbot for full commands or proxy configs."
+    },
+    {
+      "id": "i2",
+      "title": "2.Node.js Package Registry:",
+      "solution_summary": "Check chatbot for full commands or proxy configs."
+    },
+    {
+      "id": "i3",
+      "title": "3.Vscode extensions like copilot,pylance, httpclient etc.",
+      "solution_summary": "Check chatbot for full commands or proxy configs."
+    },
+    {
+      "id": "i4",
+      "title": "4. Installing WSL",
+      "solution_summary": "Check chatbot for full commands or proxy configs."
+    }
+  ],
+  "contacts": {
+    "aws_github_access": "Project Reporting Manager / Ganesh",
+    "github_offering": {
+      "product_name": "Microsoft GitHub Copilot Pay Per User Without GitHub Enterprise or MSDN Enterprise",
+      "org_name": "E250086-ProjectPulse-1008912AB0"
+    }
+  }
+}

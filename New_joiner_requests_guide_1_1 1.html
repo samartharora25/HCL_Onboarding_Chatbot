@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Joiner – Requests & Setup Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#f5f9ff', 100: '#e8f1ff', 200: '#cfe2ff', 300: '#a7caff', 400: '#73a9ff',
+              500: '#3c86ff', 600: '#1f6ef0', 700: '#1756be', 800: '#153f8b', 900: '#0f2d66'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(20,80,180,.12)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    .chip{display:inline-block;padding:.15rem .5rem;border-radius:.5rem;background:#eef4ff;color:#1f3b7b;font-weight:600;font-size:.75rem}
+    .card{background:white;border:1px solid #e6eefc;border-radius:1rem;box-shadow:0 10px 24px rgba(21,63,139,.06)}
+    .card-head{display:flex;align-items:center;gap:.6rem}
+    .step{display:inline-grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:.5rem;background:#eaf2ff;color:#1f6ef0;font-weight:700;margin-right:.5rem}
+    .section{border:1px solid #e6eefc;border-radius:1rem;background:linear-gradient(180deg,#fff,#f9fbff)}
+    .toc a{display:block;padding:.5rem .75rem;border-radius:.6rem;color:#35507a}
+    .toc a.active{background:#eef4ff;color:#174bff}
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-brand-600 text-white grid place-items-center shadow-soft">✔</div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-brand-800">Pulse New Joiner – Requests & Setup Guide</h1>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-2">
+        <a href="#portal" class="chip">Portal</a>
+        <a href="#tools" class="chip">Tools</a>
+        <a href="#issues" class="chip">Common issues</a>
+        <a href="#notes" class="chip">Notes</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-[260px,1fr] gap-8">
+    <!-- Sidebar -->
+    <aside class="hidden lg:block">
+      <nav id="toc" class="toc sticky top-24 space-y-1 p-3 border border-slate-200 rounded-xl">
+        <a href="#portal">Portal to raise tickets</a>
+        <a href="#tools">Tools required</a>
+        <div class="pl-3 space-y-1 text-sm">
+          <a href="#t1">1. Python</a>
+          <a href="#t2">2. Node.js Foundation Node.js</a>
+          <a href="#t3">3. Microsoft Visual studio code</a>
+          <a href="#t4">4. Github Copilot</a>
+          <a href="#t5">5. ChatGPT</a>
+          <a href="#t6">6. Gemini AI</a>
+          <a href="#t7">7. Podman</a>
+        </div>
+        <a href="#issues">Common issues and solutions</a>
+        <div class="pl-3 space-y-1 text-sm">
+          <a href="#i1">Python Package Repository</a>
+          <a href="#i2">Node.js Package Registry</a>
+          <a href="#i3">Vscode extensions</a>
+          <a href="#i4">Installing WSL</a>
+        </div>
+        <a href="#notes">Notes</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="space-y-10">
+      <!-- Portal -->
+      <section id="portal" class="section p-6">
+        <h2 class="text-2xl font-extrabold text-brand-800">Portal to raise tickets :</h2>
+        <p class="mt-3">
+          <a href="https://oneconnect.hcltech.com/" target="_blank" class="inline-flex items-center gap-2 text-brand-700 underline decoration-dotted">https://oneconnect.hcltech.com/
+            
+          </a>
+        </p>
+      </section>
+
+      <!-- Tools -->
+      <section id="tools" class="space-y-6">
+        <h2 class="text-2xl font-extrabold text-brand-800">Below are the list of tools required for new joiner to set up the work environment.</h2>
+
+        <!-- Python -->
+        <div id="t1" class="card p-6">
+          <div class="card-head">
+            <div class="step">1</div>
+            <h3 class="text-lg font-bold">Python </h3>
+          </div>
+          Search for Software request and select the item to continue with below steps<br/>
+          1.Create a software request ticket on the portal for Python and note the ticket number.<br/>
+		  2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.
+		  <br/>Business Justification for all requests can be : "Need for project"
+		  <br/>IT support will reach out and install the necessary tool.</p>
+        </div>
+
+        <!-- Node.js -->
+        <div id="t2" class="card p-6">
+          <div class="card-head">
+            <div class="step">2</div>
+            <h3 class="text-lg font-bold">Node.js Foundation Node.js</h3>
+          </div>
+          <p class="mt-3">1.First create a software request ticket on the portal for Node.js Foundation Node.js and note the ticket number.<br/> 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.<br/>IT support will reach out and install the necessary tool.</p>
+        </div>
+
+        <!-- VS Code -->
+        <div id="t3" class="card p-6">
+          <div class="card-head">
+            <div class="step">3</div>
+            <h3 class="text-lg font-bold">Microsoft Visual studio code</h3>
+          </div>
+          <p class="mt-3">1.First create a software request ticket on the portal for  Microsoft Visual studio code and note the ticket number.<br/> 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.<br/>IT support will reach out and install the necessary tool.</p>
+        </div>
+
+        <!-- Copilot -->
+        <div id="t4" class="card p-6">
+          <div class="card-head">
+            <div class="step">4</div>
+            <h3 class="text-lg font-bold">Github Copilot</h3>
+          </div>
+          <p class="mt-3">By default users can access copilot on the HCL machines, In case the extension in vs code does not work
+          raise an incident ticket with issue description and post resolution it should work.<br/> Make sure you have a github account first so you can login and access the peer programming
+          and chat features in vscode.</p>
+        </div>
+
+        <!-- ChatGPT -->
+        <div id="t5" class="card p-6">
+          <div class="card-head">
+            <div class="step">5</div>
+            <h3 class="text-lg font-bold">ChatGPT <a href="https://chatgpt.com/" target="_blank" class="text-brand-600 underline">https://chatgpt.com/</a></h3>
+          </div> Search for access restricted requestion.
+           Raise an access to restricted website request with Barred url https://chatgpt.com/  and attach error screenshot.
+          Once approved the access works ideally.
+		  <br/>Note:  If request is being raised after 01-Oct-2025.Follow below steps instead.
+			<br/>User needs to search in oneconnect for catalog item "ChatGPT" and fill in the required fields to raise the ticket.
+			<br/>Once approved you may access chatgpt.</p>
+        </div>
+
+        <!-- Gemini -->
+        <div id="t6" class="card p-6">
+          <div class="card-head">
+            <div class="step">6</div>
+            <h3 class="text-lg font-bold">Gemini AI <a href="https://gemini.google.com" target="_blank" class="text-brand-600 underline">https://gemini.google.com</a></h3>
+          </div> Search for access restricted requestion.<br/>
+           Raise an access to restricted website request with Barred url https://gemini.google.com   and attach error screenshot.
+          Once approved the access works ideally.</p>
+        </div>
+      </section>
+
+      <!-- Podman -->
+        <div id="t7" class="card p-6">
+          <div class="card-head">
+            <div class="step">7</div>
+            <h3 class="text-lg font-bold">Podman</h3>
+          </div> Search for Software Request.<br/>
+           1.Create a software request ticket on the portal for Podman and WSL (use keyword *wsl while searching) and note the ticket number.<br/>
+           2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.<br/>
+           3. Please raise 2 separate software request/install requests, one for Podman and one for WSL.
+		  <br/>Business Justification for all requests can be : "Need for project"
+		  <br/>IT support will reach out and install the necessary tool.</p>
+        </div>
+      </section>
+
+      <!-- Issues -->
+      <section id="issues" class="space-y-6">
+        <h2 class="text-2xl font-extrabold text-brand-800">Common issues and solutions post software tool installations :</h2>
+
+        <div id="i1" class="card p-6">
+          <h3 class="text-lg font-bold">1.Python Package Repository:</h3>
+          <p class="mt-2">URL: <a href="https://files.pythonhosted.org/" target="_blank" class="text-brand-600 underline">https://files.pythonhosted.org/</a></p>
+          <p>Purpose: Required for installing Python libraries via pip.</p>
+          <p><span class="font-semibold">solution :</span> Raise an access to restricted website request with Barred url https://files.pythonhosted.org/ and attach error screenshot.
+          Once approved the pip installer works.</p>
+          <p><span class="font-semibold">2nd solution :</span> 
+          Raise a request for <strong>Disney – Admin Access</strong> through the OneConnect portal. 
+          Search for the catalog item <strong>“Admin Access”</strong> and complete all required fields appropriately. 
+          Once access is granted, configure the required proxy settings by adding the following System Environment Variables under <strong>System Variables → New</strong>:
+          <br/>HTTP_PROXY = http://ep.threatpulse.net:80
+          <br/>HTTPS_PROXY = http://ep.threatpulse.net:80
+          <br/>After configuring the variables, restart the system to ensure the changes take effect.
+          </p>
+
+        </div>
+
+        <div id="i2" class="card p-6">
+          <h3 class="text-lg font-bold">2.Node.js Package Registry:</h3>
+          <p class="mt-2">URL: <a href="https://registry.npmjs.org/" target="_blank" class="text-brand-600 underline">https://registry.npmjs.org/</a></p>
+          <p>Purpose: Required for installing Node.js packages via npm.</p>
+          <p><span class="font-semibold">solution :</span> Raise an access to restricted website request with Barred url https://registry.npmjs.org/ and attach error screenshot.
+          Once approved the npm install should work.</p>
+        </div>
+
+        <div id="i3" class="card p-6">
+          <h3 class="text-lg font-bold">3.Vscode extensions like copilot,pylance, httpclient etc.</h3>
+          <p class="mt-2">solution : Raise an Incident with the description vs code extensions not working and IT support will reset the required permissions and 
+          extentions will start to work.</p>
+          <p><span class="font-semibold">2nd solution :</span> 
+          If the extension installation issue persists even after raising a request with the IT Support team, 
+          temporarily connect your laptop to a personal hotspot or external Wi‑Fi network (if permitted by policy). 
+          Download the required VS Code extension manually in <strong>.vsix</strong> format. 
+          Then follow these steps:
+          <br/>1. Open VS Code
+          <br/>2. Navigate to <strong>Extensions</strong>
+          <br/>3. Click on the <strong>three dots (⋯)</strong> at the top-right
+          <br/>4. Select <strong>Install from VSIX…</strong>
+          <br/>5. Choose the downloaded file and complete the installation
+          <br/>Restart VS Code after installation if required.
+          </p>
+
+        </div>
+
+        <div id="i4" class="card p-6">
+          <h3 class="text-lg font-bold">4. Installing WSL</h3>
+          <p class="mt-2">Problem/error while installing :A specified logon session does not exist. It may already have been terminated..</p>
+          <p class="mt-2">solution: Connect with IT team to get admin credentials, Turn On windows features for Windows SubSystem for Linux.</p>
+          <p class="mt-2">Use <a href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package" target="_blank" class="text-brand-600 underline">https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package</a> to upgrade WSL kernel.</p>
+        </div>
+
+      </section>
+
+      <!-- Notes -->
+      <section id="notes" class="section p-6">
+        <h2 class="text-2xl font-extrabold text-brand-800">Note:</h2>
+        <p class="mt-2">Requests may go through series of approvals sometimes and cause delay. Please make sure to track the status on one connect portal
+        and take appropriate action.</p>
+        <p class="mt-2">For AWS account access and Github repo access please reach out to the your Project Reporting Manager/Ganesh.</p>
+		<p class="mt-2">To get github acess - search for catalog item Github Offering raise request with 
+			product name : Microsoft GitHub Copilot Pay Per User Without GitHub Enterprise or MSDN Enterprise and organization name: E250086-ProjectPulse-1008912AB0.</p>
+        <p class="mt-2">Request, Install and Access tickets begin with RITM... and Incident tickets begin with INC..</p>
+      </section>
+    </main>
+  </div>
+
+  <a href="#top" id="toTop" class="fixed bottom-6 right-6 px-4 py-2 rounded-full bg-brand-600 text-white shadow-soft hidden">↑ Top</a>
+
+  <script>
+    const sections=[...document.querySelectorAll('main section, [id^="t"], [id^="i"]')];
+    const tocLinks=[...document.querySelectorAll('#toc a')];
+    function onScroll(){
+      const fromTop=window.scrollY+120; let current=sections[0].id;
+      sections.forEach(sec=>{ if(sec.offsetTop<=fromTop) current=sec.id; });
+      tocLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+current));
+      document.getElementById('toTop').classList.toggle('hidden', window.scrollY<500);
+    }
+    document.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  </script>
+</body>
+</html>

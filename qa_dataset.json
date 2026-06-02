@@ -1,0 +1,155 @@
+[
+  {
+    "id": "qa_1",
+    "question": "How do I install Python?",
+    "expected_source_id": "t1",
+    "expected_keywords": [
+      "software request",
+      "install request",
+      "ticket number",
+      "Need for project"
+    ]
+  },
+  {
+    "id": "qa_2",
+    "question": "How do I request admin access?",
+    "expected_source_id": "i1",
+    "expected_keywords": [
+      "Admin Access",
+      "OneConnect",
+      "proxy",
+      "threatpulse"
+    ]
+  },
+  {
+    "id": "qa_3",
+    "question": "Why can't I install software?",
+    "expected_source_id": "t1",
+    "expected_keywords": [
+      "restricted",
+      "ticket",
+      "request",
+      "install"
+    ]
+  },
+  {
+    "id": "qa_4",
+    "question": "How do I connect to VPN?",
+    "expected_source_id": "portal",
+    "expected_keywords": [
+      "OneConnect",
+      "ticket",
+      "IT support"
+    ]
+  },
+  {
+    "id": "qa_5",
+    "question": "How do I configure Outlook?",
+    "expected_source_id": "portal",
+    "expected_keywords": [
+      "OneConnect",
+      "IT support"
+    ]
+  },
+  {
+    "id": "qa_6",
+    "question": "How do I access company repositories?",
+    "expected_source_id": "notes",
+    "expected_keywords": [
+      "Reporting Manager",
+      "Ganesh",
+      "Github Offering"
+    ]
+  },
+  {
+    "id": "qa_7",
+    "question": "How do I raise an IT support ticket?",
+    "expected_source_id": "portal",
+    "expected_keywords": [
+      "oneconnect.hcltech.com",
+      "RITM",
+      "INC"
+    ]
+  },
+  {
+    "id": "qa_8",
+    "question": "How do I install Node.js?",
+    "expected_source_id": "t2",
+    "expected_keywords": [
+      "Node.js",
+      "software request",
+      "install request"
+    ]
+  },
+  {
+    "id": "qa_9",
+    "question": "How do I set up VS Code?",
+    "expected_source_id": "t3",
+    "expected_keywords": [
+      "Visual studio code",
+      "software request",
+      "install request"
+    ]
+  },
+  {
+    "id": "qa_10",
+    "question": "What do I do if VS Code extensions fail to install?",
+    "expected_source_id": "i3",
+    "expected_keywords": [
+      "Incident",
+      "extensions not working",
+      "VSIX",
+      "hotspot"
+    ]
+  },
+  {
+    "id": "qa_11",
+    "question": "How can I access ChatGPT on my machine?",
+    "expected_source_id": "t5",
+    "expected_keywords": [
+      "access restricted",
+      "chatgpt.com",
+      "catalog item"
+    ]
+  },
+  {
+    "id": "qa_12",
+    "question": "How do I configure npm proxy for Node.js packages?",
+    "expected_source_id": "i2",
+    "expected_keywords": [
+      "registry.npmjs.org",
+      "restricted website",
+      "npm install"
+    ]
+  },
+  {
+    "id": "qa_13",
+    "question": "What error occurs during WSL installation and how is it fixed?",
+    "expected_source_id": "i4",
+    "expected_keywords": [
+      "logon session does not exist",
+      "admin credentials",
+      "WSL kernel"
+    ]
+  },
+  {
+    "id": "qa_14",
+    "question": "How do I request Podman?",
+    "expected_source_id": "t7",
+    "expected_keywords": [
+      "Podman",
+      "WSL",
+      "separate",
+      "Need for project"
+    ]
+  },
+  {
+    "id": "qa_15",
+    "question": "Who should I contact for AWS account access?",
+    "expected_source_id": "notes",
+    "expected_keywords": [
+      "Reporting Manager",
+      "Ganesh"
+    ]
+  }
+]

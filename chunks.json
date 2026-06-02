@@ -1,0 +1,105 @@
+[
+  {
+    "id": "portal",
+    "title": "Portal to raise tickets :",
+    "category": "portal",
+    "content": "Portal to raise tickets : https://oneconnect.hcltech.com/",
+    "urls": [
+      "https://oneconnect.hcltech.com/"
+    ]
+  },
+  {
+    "id": "t1",
+    "title": "Tool: Python",
+    "category": "tool",
+    "content": "1 Python Search for Software request and select the item to continue with below steps 1.Create a software request ticket on the portal for Python and note the ticket number. 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number. Business Justification for all requests can be : \"Need for project\" IT support will reach out and install the necessary tool.",
+    "urls": []
+  },
+  {
+    "id": "t2",
+    "title": "Tool: Node.js Foundation Node.js",
+    "category": "tool",
+    "content": "2 Node.js Foundation Node.js 1.First create a software request ticket on the portal for Node.js Foundation Node.js and note the ticket number. 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.IT support will reach out and install the necessary tool.",
+    "urls": []
+  },
+  {
+    "id": "t3",
+    "title": "Tool: Microsoft Visual studio code",
+    "category": "tool",
+    "content": "3 Microsoft Visual studio code 1.First create a software request ticket on the portal for Microsoft Visual studio code and note the ticket number. 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number.IT support will reach out and install the necessary tool.",
+    "urls": []
+  },
+  {
+    "id": "t4",
+    "title": "Tool: Github Copilot",
+    "category": "tool",
+    "content": "4 Github Copilot By default users can access copilot on the HCL machines, In case the extension in vs code does not work raise an incident ticket with issue description and post resolution it should work. Make sure you have a github account first so you can login and access the peer programming and chat features in vscode.",
+    "urls": []
+  },
+  {
+    "id": "t5",
+    "title": "Tool: ChatGPT https://chatgpt.com/",
+    "category": "tool",
+    "content": "5 ChatGPT https://chatgpt.com/ Search for access restricted requestion. Raise an access to restricted website request with Barred url https://chatgpt.com/ and attach error screenshot. Once approved the access works ideally. Note: If request is being raised after 01-Oct-2025.Follow below steps instead. User needs to search in oneconnect for catalog item \"ChatGPT\" and fill in the required fields to raise the ticket. Once approved you may access chatgpt.",
+    "urls": [
+      "https://chatgpt.com/"
+    ]
+  },
+  {
+    "id": "t6",
+    "title": "Tool: Gemini AI https://gemini.google.com",
+    "category": "tool",
+    "content": "6 Gemini AI https://gemini.google.com Search for access restricted requestion. Raise an access to restricted website request with Barred url https://gemini.google.com and attach error screenshot. Once approved the access works ideally.",
+    "urls": [
+      "https://gemini.google.com"
+    ]
+  },
+  {
+    "id": "t7",
+    "title": "Tool: Podman",
+    "category": "tool",
+    "content": "7 Podman Search for Software Request. 1.Create a software request ticket on the portal for Podman and WSL (use keyword *wsl while searching) and note the ticket number. 2.Search for Software install request ,select the item to raise install software request using the previously noted ticket number. 3. Please raise 2 separate software request/install requests, one for Podman and one for WSL. Business Justification for all requests can be : \"Need for project\" IT support will reach out and install the necessary tool.",
+    "urls": []
+  },
+  {
+    "id": "i1",
+    "title": "Issue: 1.Python Package Repository:",
+    "category": "issue",
+    "content": "1.Python Package Repository: URL: https://files.pythonhosted.org/ Purpose: Required for installing Python libraries via pip. solution : Raise an access to restricted website request with Barred url https://files.pythonhosted.org/ and attach error screenshot. Once approved the pip installer works. 2nd solution : Raise a request for Disney – Admin Access through the OneConnect portal. Search for the catalog item “Admin Access” and complete all required fields appropriately. Once access is granted, configure the required proxy settings by adding the following System Environment Variables under System Variables → New: HTTP_PROXY = http://ep.threatpulse.net:80 HTTPS_PROXY = http://ep.threatpulse.net:80 After configuring the variables, restart the system to ensure the changes take effect.",
+    "urls": [
+      "https://files.pythonhosted.org/"
+    ]
+  },
+  {
+    "id": "i2",
+    "title": "Issue: 2.Node.js Package Registry:",
+    "category": "issue",
+    "content": "2.Node.js Package Registry: URL: https://registry.npmjs.org/ Purpose: Required for installing Node.js packages via npm. solution : Raise an access to restricted website request with Barred url https://registry.npmjs.org/ and attach error screenshot. Once approved the npm install should work.",
+    "urls": [
+      "https://registry.npmjs.org/"
+    ]
+  },
+  {
+    "id": "i3",
+    "title": "Issue: 3.Vscode extensions like copilot,pylance, httpclient etc.",
+    "category": "issue",
+    "content": "3.Vscode extensions like copilot,pylance, httpclient etc. solution : Raise an Incident with the description vs code extensions not working and IT support will reset the required permissions and extentions will start to work. 2nd solution : If the extension installation issue persists even after raising a request with the IT Support team, temporarily connect your laptop to a personal hotspot or external Wi‑Fi network (if permitted by policy). Download the required VS Code extension manually in .vsix format. Then follow these steps: 1. Open VS Code 2. Navigate to Extensions 3. Click on the three dots (⋯) at the top-right 4. Select Install from VSIX… 5. Choose the downloaded file and complete the installation Restart VS Code after installation if required.",
+    "urls": []
+  },
+  {
+    "id": "i4",
+    "title": "Issue: 4. Installing WSL",
+    "category": "issue",
+    "content": "4. Installing WSL Problem/error while installing :A specified logon session does not exist. It may already have been terminated.. solution: Connect with IT team to get admin credentials, Turn On windows features for Windows SubSystem for Linux. Use https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package to upgrade WSL kernel.",
+    "urls": [
+      "https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package"
+    ]
+  },
+  {
+    "id": "notes",
+    "title": "Onboarding Notes & Access Guidelines",
+    "category": "notes",
+    "content": "Note:\nRequests may go through series of approvals sometimes and cause delay. Please make sure to track the status on one connect portal and take appropriate action.\nFor AWS account access and Github repo access please reach out to the your Project Reporting Manager/Ganesh.\nTo get github acess - search for catalog item Github Offering raise request with product name : Microsoft GitHub Copilot Pay Per User Without GitHub Enterprise or MSDN Enterprise and organization name: E250086-ProjectPulse-1008912AB0.\nRequest, Install and Access tickets begin with RITM... and Incident tickets begin with INC..",
+    "urls": []
+  }
+]
