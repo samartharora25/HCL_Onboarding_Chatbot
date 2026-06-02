@@ -125,3 +125,4 @@ This project is optimized for deployment on **Render**:
 ## 👥 Contributors
 
 * **Samarth Arora** - Lead Developer & Creator - [@samartharora25](https://github.com/samartharora25)
+* * **Pragya Chakravarty** - Lead Developer & Creator - [@pragyac09](https://github.com/pragyac09)
