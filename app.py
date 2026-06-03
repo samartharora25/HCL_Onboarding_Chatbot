@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from dotenv import load_dotenv
 
@@ -13,7 +13,7 @@ except ImportError as e:
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
 # Enable CORS for all routes (allows Vite frontend at port 5173 to access the API)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -123,6 +123,23 @@ def test_retrieval():
         "results_found": len(results),
         "top_match": results[0] if results else None
     })
+
+@app.route('/')
+def serve_index():
+    """
+    Serves the React frontend index page.
+    """
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    """
+    Redirects non-API routes to index.html for SPA router support,
+    and returns a standard JSON error for API routes.
+    """
+    if request.path.startswith('/api/'):
+        return jsonify({"error": "Not Found"}), 404
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
     port = int(os.getenv("FLASK_PORT", 5000))

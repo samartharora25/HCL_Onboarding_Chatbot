@@ -35,7 +35,7 @@ const Chatbot = ({ user }) => {
 
   // Check backend status on mount
   useEffect(() => {
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:5000' : '');
     fetch(`${apiBaseUrl}/api/status`)
       .then(res => {
         if (!res.ok) throw new Error();
@@ -68,7 +68,7 @@ const Chatbot = ({ user }) => {
     }));
 
     try {
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:5000' : '');
       const response = await fetch(`${apiBaseUrl}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

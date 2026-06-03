@@ -9,7 +9,7 @@ def get_embeddings_model():
     Initializes a local HuggingFace embeddings model.
     By default, BAAI/bge-large-en-v1.5 is used, falling back to a lighter model if necessary.
     """
-    model_name = "BAAI/bge-large-en-v1.5"
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"
     encode_kwargs = {'normalize_embeddings': True}
     print(f"Loading local HuggingFace embeddings: {model_name} (CPU/GPU auto-detect)...")
     
@@ -26,11 +26,8 @@ def get_embeddings_model():
         )
         return embeddings
     except Exception as e:
-        print(f"Failed to load {model_name}: {e}. Trying lighter model all-MiniLM-L6-v2...")
-        return HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2",
-            cache_folder=cache_folder
-        )
+        print(f"Failed to load {model_name}: {e}")
+        raise e
 
 def build_vector_store():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
