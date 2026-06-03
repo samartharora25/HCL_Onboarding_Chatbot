@@ -214,19 +214,7 @@ const Login = ({ onAuthSuccess }) => {
           </button>
         </form>
 
-        <div className="login-footer">
-          <button 
-            type="button" 
-            onClick={() => {
-              setIsSignUp(!isSignUp);
-              setErrorMsg('');
-              setSuccessMsg('');
-            }}
-            className="toggle-auth-btn"
-          >
-            {isSignUp ? 'Already registered? Sign In' : 'New to HCL Tech? Create Account'}
-          </button>
-        </div>
+
       </div>
     </div>
   );
