@@ -1,26 +1,62 @@
 import os
 import json
 import shutil
-from langchain_community.embeddings import HuggingFaceEmbeddings
+import requests
 from langchain_community.vectorstores import Chroma
+from langchain_core.embeddings import Embeddings
+
+class HFAPIEmbeddings(Embeddings):
+    def __init__(self, model_name="sentence-transformers/all-MiniLM-L6-v2", api_key=None):
+        self.model_name = model_name
+        self.api_key = api_key or os.getenv("HF_ACCESS_KEY") or os.getenv("HF_TOKEN")
+        self.api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_name}"
+        self.headers = {"Authorization": f"Bearer {self.api_key}"} if self.api_key else {}
+
+    def embed_documents(self, texts):
+        response = requests.post(
+            self.api_url,
+            headers=self.headers,
+            json={"inputs": texts, "options": {"wait_for_model": True}}
+        )
+        if response.status_code != 200:
+            raise Exception(f"HF API Error: {response.status_code} - {response.text}")
+        return response.json()
+
+    def embed_query(self, text):
+        response = requests.post(
+            self.api_url,
+            headers=self.headers,
+            json={"inputs": text, "options": {"wait_for_model": True}}
+        )
+        if response.status_code != 200:
+            raise Exception(f"HF API Error: {response.status_code} - {response.text}")
+        return response.json()
 
 def get_embeddings_model():
     """
-    Initializes a local HuggingFace embeddings model.
-    By default, BAAI/bge-large-en-v1.5 is used, falling back to a lighter model if necessary.
+    Initializes embeddings model.
+    In Render (production), we use Hugging Face API to avoid loading PyTorch locally (saves memory, fits in 512MB RAM).
+    Locally, we use Hugging Face local embeddings to avoid proxy/network issues.
     """
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
-    encode_kwargs = {'normalize_embeddings': True}
-    print(f"Loading local HuggingFace embeddings: {model_name} (CPU/GPU auto-detect)...")
     
-    # We set cache folder in local directory to avoid global directory permission issues
+    # Check if we are running on Render
+    if os.getenv("RENDER") == "true":
+        print(f"Loading Hugging Face API embeddings for {model_name} (production mode)...")
+        return HFAPIEmbeddings(model_name=model_name)
+
+    # Local development fallback (loads local PyTorch)
+    print(f"Loading local HuggingFace embeddings: {model_name}...")
+    from langchain_community.embeddings import HuggingFaceEmbeddings
+    
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     cache_folder = os.path.join(base_dir, ".model_cache")
+    encode_kwargs = {'normalize_embeddings': True}
     
     try:
         embeddings = HuggingFaceEmbeddings(
             model_name=model_name,
-            model_kwargs={'device': 'cpu'}, # Use GPU if PyTorch CUDA is set up, CPU is safe and fast for small documents
+            model_kwargs={'device': 'cpu'},
             encode_kwargs=encode_kwargs,
             cache_folder=cache_folder
         )
