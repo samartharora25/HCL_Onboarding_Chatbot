@@ -37,7 +37,10 @@ COPY hcl_chroma_db/ ./hcl_chroma_db/
 # Copy built frontend assets from Stage 1
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 
-# Expose port and run using gunicorn
-# Render dynamically passes the PORT environment variable, so we use shell form to bind to it or fallback to 5000
+# Limit PyTorch CPU threads to reduce memory footprint on free tier
+ENV OMP_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+
+# Expose port and run using gunicorn with a single worker process
 EXPOSE 5000
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} --timeout 120 app:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 2 --timeout 120 app:app"]
