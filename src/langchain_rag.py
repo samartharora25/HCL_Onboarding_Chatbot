@@ -171,9 +171,12 @@ class OnboardingRAG:
         if chat_history:
             # Append relevant context history
             for msg in chat_history[-5:]:
-                messages.append({"role": msg["role"], "content": msg["content"]})
-        else:
-            messages.append({"role": "user", "content": query})
+                # Normalize role just in case
+                role = "assistant" if msg["role"] == "assistant" else "user"
+                messages.append({"role": role, "content": msg["content"]})
+
+        # ALWAYS append the user's current query to the prompt
+        messages.append({"role": "user", "content": query})
 
         try:
             print("Sending RAG prompt to Groq API...")
