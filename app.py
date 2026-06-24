@@ -95,6 +95,21 @@ def login_log():
     })
     return jsonify({"status": "success"})
 
+@app.route('/api/submissions', methods=['GET'])
+def get_submissions():
+    """
+    Returns the logged logins and questions from submission.json.
+    """
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "submission.json")
+    try:
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": f"Failed to read submissions: {str(e)}"}), 500
+    return jsonify([])
+
 @app.route('/api/summary', methods=['GET'])
 def get_summary():
     """
