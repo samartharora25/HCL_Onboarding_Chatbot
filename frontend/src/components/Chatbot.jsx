@@ -74,7 +74,11 @@ const Chatbot = ({ user }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           query: textToSend,
-          history: chatHistory
+          history: chatHistory,
+          user: {
+            name: user?.name,
+            employeeId: user?.employeeId
+          }
         })
       });
 

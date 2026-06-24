@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Chatbot from './components/Chatbot';
 import AboutModal from './components/AboutModal';
-import { supabase } from './utils/supabaseClient';
 import './App.css';
 
 function App() {
@@ -14,23 +13,10 @@ function App() {
 
   // Check user session on mount
   useEffect(() => {
-    const checkSession = async () => {
-      if (supabase) {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session?.user) {
-          const meta = session.user.user_metadata;
-          setUser({
-            email: session.user.email,
-            name: meta?.full_name || session.user.email,
-            employeeId: meta?.employee_id || 'N/A'
-          });
-        }
-      } else {
-        // Look in local storage for simulated session
-        const storedUser = localStorage.getItem('simulated_user');
-        if (storedUser) {
-          setUser(JSON.parse(storedUser));
-        }
+    const checkSession = () => {
+      const storedUser = localStorage.getItem('simulated_user');
+      if (storedUser) {
+        setUser(JSON.parse(storedUser));
       }
       setLoading(false);
     };
@@ -57,17 +43,11 @@ function App() {
 
   const handleAuthSuccess = (userData) => {
     setUser(userData);
-    if (!supabase) {
-      localStorage.setItem('simulated_user', JSON.stringify(userData));
-    }
+    localStorage.setItem('simulated_user', JSON.stringify(userData));
   };
 
-  const handleLogout = async () => {
-    if (supabase) {
-      await supabase.auth.signOut();
-    } else {
-      localStorage.removeItem('simulated_user');
-    }
+  const handleLogout = () => {
+    localStorage.removeItem('simulated_user');
     setUser(null);
   };
 

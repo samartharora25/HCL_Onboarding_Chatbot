@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -49,8 +50,50 @@ def status():
         "database_loaded": db_initialized,
         "groq_api_active": groq_active,
         "embedding_model": model_name,
-        "supabase_configured": bool(os.getenv("SUPABASE_URL") and os.getenv("SUPABASE_ANON_KEY"))
+        "supabase_configured": False
     })
+
+def log_to_submission(entry):
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "submission.json")
+    try:
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if not isinstance(data, list):
+                    data = []
+        else:
+            data = []
+    except Exception:
+        data = []
+        
+    data.append(entry)
+    
+    try:
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Error writing to submission.json: {e}")
+
+@app.route('/api/login', methods=['POST'])
+def login_log():
+    """
+    Endpoint called when a user logs in (enters Name and Employee ID).
+    Logs the login event to submission.json.
+    """
+    data = request.get_json() or {}
+    name = data.get("name", "").strip()
+    employee_id = data.get("employeeId", "").strip()
+    
+    if not name or not employee_id:
+        return jsonify({"error": "Name and Employee ID are required."}), 400
+        
+    log_to_submission({
+        "type": "login",
+        "name": name,
+        "employee_id": employee_id,
+        "timestamp": datetime.datetime.now().isoformat()
+    })
+    return jsonify({"status": "success"})
 
 @app.route('/api/summary', methods=['GET'])
 def get_summary():
@@ -91,9 +134,19 @@ def chat():
     data = request.get_json() or {}
     query = data.get("query", "").strip()
     history = data.get("history", [])
+    user = data.get("user", {})
 
     if not query:
         return jsonify({"answer": "Query cannot be empty."}), 400
+
+    # Log the question to submission.json
+    log_to_submission({
+        "type": "question",
+        "name": user.get("name", "Unknown") if user else "Unknown",
+        "employee_id": user.get("employeeId", "Unknown") if user else "Unknown",
+        "question": query,
+        "timestamp": datetime.datetime.now().isoformat()
+    })
 
     try:
         response = rag.generate_answer(query, chat_history=history)
